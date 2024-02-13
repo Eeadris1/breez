@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ posts|length }})</h1>
+    {% for post in posts %}
+        <article class="media content-section">
+            <div class="d-flex align-items-center">
+                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" style="width: 50px; height: 50px; object-fit: contain; border: 2px solid #0066cc;">
+
+                <div class="ml-2">
+                    <div class="d-flex flex-column">
+                        <a class="username" href="{% url 'user_posts' username=post.author.username %}">{{ post.author }}</a>
+                        <small class="text-muted" style="color: white !important;">{{ post.date_posted }}</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Move the line-divider here, after the date and time section -->
+            <div class="line-divider"></div>
+
+            <div class="media-body ml-3">
+                <h2><a class="article-title" href="{% url 'user_posts' username=post.author.username %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+
+                {% if post.author == request.user %}
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' pk=post.pk %}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' pk=post.pk %}">Delete</a>
+                {% endif %}
+            </div>
+
+        </article>
+    {% endfor %}
+{% endblock %}

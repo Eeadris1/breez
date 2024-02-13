@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section d-flex flex-column align-items-center mt-4">
+        <div class="profile-container border border-primary rounded p-4" style="background-color: #282c34; color: white;"> <!-- Set background color and text color -->
+            <div class="text-center mb-4">
+                <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"  style="width: 100px; height: 100px; object-fit: contain; border: 2px solid #0066cc;">
+
+                <h2 class="account-heading mb-1">{{ user.username }}</h2>
+                <p class="text-secondary mb-0">{{ user.email }}</p>
+            </div>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4" style="color: #61dafb;">Profile Info</legend> <!-- Set legend text color -->
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group text-center">
+                    <button class="btn btn-outline-info" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
