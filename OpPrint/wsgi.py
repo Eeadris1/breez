@@ -15,7 +15,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "OpPrint.settings")
 
 application = get_wsgi_application()
 
-app = application  #i added this bcus im hosting my website with vercel bcus our allow host is set to .vercel in the settings.py
 
 
 
