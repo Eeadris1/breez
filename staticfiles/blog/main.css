@@ -1,0 +1,53 @@
+/* Set the main background color to a deep black */
+body {
+    background-color: #000;  /* Change to the desired deep black color */
+    color: white;  /* Set the text color for the main content to white */
+}
+
+/* Style the post sections with a consistent background color */
+.media.content-section {
+    background-color: #111;  /* Change to the desired color for post content */
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #333; /* Add a default border for better separation */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+}
+
+/* Add a black border to each post block */
+.media.content-section.black-border {
+    border: 1px solid #333;
+}
+
+/* Style the username to have a bigger font size */
+.username {
+    font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+/* Style the line-divider to be white */
+.line-divider {
+    border-top: 1px solid white;  /* Change to white */
+    margin: 10px 0;  /* Adjust the margin as needed */
+}
+
+/* Style the date and time to be white */
+.article-metadata small {
+    color: white !important; /* Set the date color to white */
+    font-size: 0.8em; /* Adjust the font size for the date */
+}
+
+/* Style the title to make it more prominent */
+.article-title {
+    color: #ddd; /* Set the title color */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 1.5em; /* Adjust the font size */
+}
+
+/* Style the content to be white */
+.article-content {
+    color: white; /* Set the content text color */
+    line-height: 1.6; /* Set the line height for better readability */
+}
+/* blog/static/blog/css/your_existing_style.css */
+
+/* ... your existing styles ... */
+
