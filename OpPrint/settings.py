@@ -30,7 +30,10 @@ SECRET_KEY = SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+# settings.py
+
+ALLOWED_HOSTS = ['breez.onrender.com']
+
 
 
 # Application definition
